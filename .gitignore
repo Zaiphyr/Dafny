@@ -1,0 +1,9 @@
+dafny/
+test.csproj
+test.cs
+obj/
+test.deps.json
+test.runtimeconfig.json
+test.dll
+test.exe
+test.pdb
