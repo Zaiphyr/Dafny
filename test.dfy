@@ -1,11 +1,11 @@
 method Add(a: int, b: int) returns (result: int)
-  ensures result == a + b // précondition : résultat est la somme de a et b
+  ensures result == a + b // postcondition : résultat est la somme de a et b
 {
   result := a + b;
 }
 
 method Sum(n: nat) returns (res: nat)
-  ensures res == n * (n + 1) / 2
+  ensures res == n * (n + 1) / 2 // postcondition : résultat est la somme des n premiers entiers
 {
   var i := 0;
   res := 0;
