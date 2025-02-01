@@ -4,19 +4,19 @@ method Add(a: int, b: int) returns (result: int)
   result := a + b;
 }
 
-method Sum(n: int) returns (result: int)
-  requires n >= 0
-  ensures result == n * (n + 1) / 2
+method Sum(n: nat) returns (res: nat)
+  ensures res == n * (n + 1) / 2
 {
   var i := 0;
-  var sum := 0;
+  res := 0;
+
   while i < n
-    invariant 0 <= i <= n && sum == (i * (i + 1)) / 2
+    invariant 0 <= i <= n 
+    invariant res == i * (i + 1) / 2 
   {
-    sum := sum + i;
+    res := res + i;
     i := i + 1;
   }
-  result := sum;
 }
 
 method Main()
@@ -25,6 +25,8 @@ method Main()
   var b: int := 2;
   var c: int := Add(a, b);
   assert c == 3; // vérifie que c est bien égal à 3
+  print c,"\n";
   var d: int := Sum(10);
   assert d == 55; // vérifie que d est bien égal à 55
+  print d,"\n";
 }
