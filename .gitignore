@@ -7,3 +7,5 @@ test.runtimeconfig.json
 test.dll
 test.exe
 test.pdb
+dafny.sln
+bin/
