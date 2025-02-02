@@ -19,6 +19,19 @@ method Sum(n: nat) returns (res: nat)
   }
 }
 
+method While_True(n: int) 
+{
+    var i := 0;
+    while true 
+      decreases n - i // Preuve que i s'approche de n
+    {
+        if i >= n {
+            break;
+        }
+        i := i + 1;
+    }
+}
+
 method Main()
 {
   var a: int := 1;
@@ -26,6 +39,7 @@ method Main()
   var c: int := Add(a, b);
   assert c == 3; // vérifie que c est bien égal à 3
   print c,"\n";
+  While_True(10);
   var d: int := Sum(10);
   assert d == 55; // vérifie que d est bien égal à 55
   print d,"\n";
