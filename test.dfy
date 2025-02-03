@@ -14,6 +14,7 @@ method Sum(n: nat) returns (res: nat)
     invariant 0 <= i <= n 
     invariant res == i * (i + 1) / 2 
   {
+    
     res := res + i;
     i := i + 1;
   }

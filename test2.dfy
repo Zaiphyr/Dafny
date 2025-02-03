@@ -24,16 +24,3 @@ ghost method TestSum()
     
     assert result == 10 * (10 + 1) / 2; // Vérification formelle
 }
-
-method WhileTrue(n: int) 
-{
-    var i := 0;
-    while true 
-      decreases n - i // Preuve que i s'approche de n
-    {
-        if i >= n {
-            break;
-        }
-        i := i + 1;
-    }
-}
