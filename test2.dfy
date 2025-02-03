@@ -25,7 +25,7 @@ ghost method TestSum()
     assert result == 10 * (10 + 1) / 2; // Vérification formelle
 }
 
-method Example(n: int) 
+method WhileTrue(n: int) 
 {
     var i := 0;
     while true 
